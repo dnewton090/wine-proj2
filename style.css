@@ -1,0 +1,25 @@
+.jumbotronEdit {
+    background: url('https://instagram.fadl5-1.fna.fbcdn.net/v/t51.2885-15/e35/103583977_143928703894345_4753461742128889119_n.jpg?_nc_ht=instagram.fadl5-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=iEno2yyDHrMAX-MABQx&oh=a14b1ca12b8018e114e47929901a0b30&oe=5F1122B7') no-repeat center center;
+    background-size: 90%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+
+/* attempting to change the button color:  has not worked*/
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2 !important;
+}
+
+/* to decrease the size of the image on the product page */
+.img-responsive{
+    display: block;
+    max-width: 80%;
+    height: auto;
+}
+
+.img-detail{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

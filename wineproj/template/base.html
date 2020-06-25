@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <style>
+        .row div{padding: 20px 10px; border: 1px solid;}
+    </style> -->
+    <title>South East Wines</title>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Any rules for including JS in this position? -->
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid fixed-top" style="background-color: rgb(77, 7, 7)">
+        <nav class="navbar navbar-expand-md navbar-dark " id="navbar">
+            <a class="navbar-brand" href="index.html">SouthEast Wines</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls=navbarSupportedContent aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Placing unordered lists:  ml-auto, mx-auto, md-auto -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a href="products.html" class="nav-link dropdown-toggle" id="navbarDropdown"
+                            data-toggle="dropdown" role="button">Products</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="products.html">Reds</a>
+                            <a class="dropdown-item" href="products.html">Whites</a>
+                            <a class="dropdown-item" href="products.html">Rosé & Sparkling</a>
+                            <a class="dropdown-item" href="products.html">Fortifieds</a>
+                        </div>
+                    </li>
+                    <li>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"
+                            role="button">Contact</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Our Blog</a>
+                            <a class="dropdown-item" href="#">Call us</a>
+                            <a class="dropdown-item" href="#">Facebook</a>
+                        </div>
+                    </li>
+                </ul>
+
+
+                <div class="navbar-collapse" id="rhsNav">
+
+                    <div class="navbar-nav ml-auto">
+                        <form class="form-inline">
+                            <input class="form-control mx-auto" type="search" placeholder="Find your drop..."
+                                aria-label="Search">
+                        </form>
+                        <a href="#" class="nav-item nav-link">Login / Register</a>
+                        <a href="#" class="nav-item nav-link">CART</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="jumbotron jumbotron-fluid" style="background-color: rgb(77, 7, 7)">
+        <div class="container text-white text-center">
+            <h1 class="display-3">South East Wines</h1>
+            <div class="container">
+                <h3>Drops from South Australia</h3>
+            </div>
+        </div>
+    </div>
+
+    {% block main%}{% endblock %}

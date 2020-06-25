@@ -6,12 +6,13 @@ from flask import Flask
 
 
 def create_app():
-    app = Flask(__name__)
+    # * can we rehash other code in img src now?
+    app = Flask(__name__, static_url_path='/wineproj/static')
     app.debug = True
 
-    # from . import wineproj
-    from . import views
+    # * from . import wineproj
+    from wineproj import views
     app.register_blueprint(views.bp)
 
-    # app.secret_key='secretkey'  ||  # ? encryption for cookies
+    # app.secret_key='secretkey'  ||  # ? cookie encryption
     return app

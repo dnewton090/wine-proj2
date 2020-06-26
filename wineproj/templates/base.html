@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Internal CSS -->
-    <link rel="stylesheet/text" href="/wineproj/static/css/style.css">
-
+    <link rel="stylesheet" href="/wineproj/static/css/style.css">
     <!-- <style>
         .row div{padding: 20px 10px; border: 1px solid;}
     </style> -->
@@ -28,71 +27,18 @@
         crossorigin="anonymous"></script>
 
     <!-- Any rules for including JS in this position? -->
-    <script src="scripts.js"></script>
+    <script src="/wineproj/scripts.js"></script>
+
+
+    {% include "includes/nav.html" %}
 </head>
 
-<body>
-    <div class="container-fluid fixed-top" style="background-color: rgb(77, 7, 7)">
-        <nav class="navbar navbar-expand-md navbar-dark " id="navbar">
-            <a class="navbar-brand" href="index.html">SouthEast Wines</a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls=navbarSupportedContent aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Placing unordered lists:  ml-auto, mx-auto, md-auto -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a href="temmplates/products.html" class=" nav-link dropdown-toggle" id="navbarDropdown"
-                            data-toggle="dropdown" role="button">Products</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="templates/products.html">Reds</a>
-                            <a class="dropdown-item" href="temmplates/products.html">Whites</a>
-                            <a class=" dropdown-item" href="temmplates/products.html">Rosé & Sparkling</a>
-                            <a class=" dropdown-item" href="temmplates/products.html">Fortifieds</a>
-                        </div>
-                    </li>
-                    <li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"
-                            role="button">Contact</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Our Blog</a>
-                            <a class="dropdown-item" href="#">Call us</a>
-                            <a class="dropdown-item" href="#">Facebook</a>
-                        </div>
-                    </li>
-                </ul>
 
 
-                <div class="navbar-collapse" id="rhsNav">
-
-                    <div class="navbar-nav ml-auto">
-                        <form class="form-inline">
-                            <input class="form-control mx-auto" type="search" placeholder="Find your drop..."
-                                aria-label="Search">
-                        </form>
-                        <a href="#" class="nav-item nav-link">Login / Register</a>
-                        <a href="#" class="nav-item nav-link">CART</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </nav>
-    </div>
 
 
-    <div class="jumbotron jumbotron-fluid" style="background-color: rgb(77, 7, 7)">
-        <div class="container text-white text-center">
-            <h1 class="display-3">South East Wines</h1>
-            <div class="container">
-                <h3>Drops from South Australia</h3>
-            </div>
-        </div>
-    </div>
-
-    {% block main%}{% endblock %}
+<div>
+    {% block main %}
+    <!-- Unique content will be rendered in here  -->
+    {% endblock %}
+</div>

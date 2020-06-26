@@ -1,147 +1,68 @@
-<!doctype html>
-<html lang="en">
+{% extends "base.html"%}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Internal CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- <style>
-        .row div{padding: 20px 10px; border: 1px solid;}
-    </style> -->
-    <title>South East Wines</title>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+{% block main%}
 
-    <!-- Any rules for including JS in this position? -->
-    <script src="scripts.js"></script>
-</head>
-
-<body>
-    <div class="container-fluid fixed-top" style="background-color: rgb(77, 7, 7)">
-        <nav class="navbar navbar-expand-md navbar-dark " id="navbar">
-            <a class="navbar-brand" href="index.html">SouthEast Wines</a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls=navbarSupportedContent aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Placing unordered lists:  ml-auto, mx-auto, md-auto -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a href="products.html" class="nav-link dropdown-toggle" id="navbarDropdown"
-                            data-toggle="dropdown" role="button">Products</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Reds</a>
-                            <a class="dropdown-item" href="#">Whites</a>
-                            <a class="dropdown-item" href="#">Rosé & Sparkling</a>
-                            <a class="dropdown-item" href="#">Fortifieds</a>
-                        </div>
-                    </li>
-                    <li>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"
-                            role="button">Contact</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Our Blog</a>
-                            <a class="dropdown-item" href="#">Call us</a>
-                            <a class="dropdown-item" href="#">Facebook</a>
-                        </div>
-                    </li>
-                </ul>
+<div class="jumbotron jumbotron-fluid sticky-top" style="background-color: rgb(77, 7, 7)">
+    <div class="container text-white text-center">
+        <h1 class="display-3">South East Wines</h1>
+        <div class="container">
+            <h3>Drop Details</h3>
+        </div>
+    </div>
+</div>
 
 
-                <div class="navbar-collapse" id="rhsNav">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 thumbnail">
+            <img src="/wineproj/static/img/cabsav-lg.jpg" alt class="img-detail">
+        </div>
+        <div class="col-md-5 caption">
+            <h1>2014 Cabernet Sauvignon</h1>
+            <h3>Rymill Coonawarra</h3><br>
+            <h5 class="lead"><em>"Beefiest drop in the South East"</h5></em><br>
+            <p>Description of this particular wine...</p>
+            <p>Perhaps I could link this directly to a website as well...<br>
+            <p>Use JavaScript to dynamically link discounts & Cart</p>
 
-                    <div class="navbar-nav ml-auto">
-                        <form class="form-inline">
-                            <input class="form-control mx-auto" type="search" placeholder="Find your drop..."
-                                aria-label="Search">
-                        </form>
-                        <a href="#" class="nav-item nav-link">Login / Register</a>
-                        <a href="#" class="nav-item nav-link">CART</a>
-                    </div>
+            </p>
+            <p>Tasting notes</p>
+            <ul>
+                <li>Fruity</li>
+                <li>Bold</li>
+                <li>Tannins</li>
+            </ul>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 id="price_sg">Bottle: $30.00</h4><br>
+                </div>
+                <div class="col-md-6">
+                    <h4 id="price_sg">Dozen: $300.00</h4><br>
                 </div>
             </div>
-        </nav>
-    </div>
 
-
-    <div class="jumbotron jumbotron-fluid sticky-top" style="background-color: rgb(77, 7, 7)">
-        <div class="container text-white text-center">
-            <h1 class="display-3">South East Wines</h1>
-            <div class="container">
-                <h3>Drop Details</h3>
+            <form class="form-inline">
+                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                <input class="form-control form-inline col-sm-6 col-md-4 ml-auto" type="text" placeholder="Qty"
+                    aria-label="Quantity">
+            </form>
+            <h1></h1>
+            <br>
+            <br>
+            <br>
+            <h4>Testing Maps: Need to setup an key for the API</h4>
+            <!--Google maps  // Link this to the database in the next round-->
+            <div>
+                <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 300px">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223434.9772550023!2d140.61224155355515!3d-37.177517752081414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6acb0635ed4c05fd%3A0x5df6d0504476228d!2sRymill%20Coonawarra!5e0!3m2!1spt-BR!2sau!4v1592193752664!5m2!1spt-BR!2sau"
+                        width="400" height="300" frameborder="2" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 thumbnail">
-                <img src="/wineproj/static/img/cabsav-lg.jpg" alt class="img-detail">
-            </div>
-            <div class="col-md-5 caption">
-                <h1>2014 Cabernet Sauvignon</h1>
-                <h3>Rymill Coonawarra</h3><br>
-                <h5 class="lead"><em>"Beefiest drop in the South East"</h5></em><br>
-                <p>Description of this particular wine...</p>
-                <p>Perhaps I could link this directly to a website as well...<br>
-                <p>Use JavaScript to dynamically link discounts & Cart</p>
-
-                </p>
-                <p>Tasting notes</p>
-                <ul>
-                    <li>Fruity</li>
-                    <li>Bold</li>
-                    <li>Tannins</li>
-                </ul>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 id="price_sg">Bottle: $30.00</h4><br>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 id="price_sg">Dozen: $300.00</h4><br>
-                    </div>
-                </div>
-
-                <form class="form-inline">
-                    <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                    <input class="form-control form-inline col-sm-6 col-md-4 ml-auto" type="text" placeholder="Qty"
-                        aria-label="Quantity">
-                </form>
-                <h1></h1>
-                <br>
-                <br>
-                <br>
-                <h4>Testing Maps: Need to setup an key for the API</h4>
-                <!--Google maps  // Link this to the database in the next round-->
-                <div>
-                    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 300px">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223434.9772550023!2d140.61224155355515!3d-37.177517752081414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6acb0635ed4c05fd%3A0x5df6d0504476228d!2sRymill%20Coonawarra!5e0!3m2!1spt-BR!2sau!4v1592193752664!5m2!1spt-BR!2sau"
-                            width="400" height="300" frameborder="2" style="border:0;" allowfullscreen=""
-                            aria-hidden="false" tabindex="0"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
+    {% endblock %}

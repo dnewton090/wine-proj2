@@ -1,0 +1,57 @@
+{% block nav %}
+<header>
+    <div class="container-fluid fixed-top" style="background-color: rgb(77, 7, 7)">
+        <nav class="navbar navbar-expand-md navbar-dark " id="navbar">
+            <a class="navbar-brand" href="{{ url_for('wineproj.index') }}">SouthEast Wines</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls=navbarSupportedContent aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Placing unordered lists:  ml-auto, mx-auto, md-auto -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a href="{{ url_for('wineproj.products') }}" class="nav-link dropdown-toggle"
+                            id="navbarDropdown" data-toggle="dropdown" role="button">Products</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ url_for('wineproj.products') }}">Reds</a>
+                            <a class="dropdown-item" href="{{ url_for('wineproj.products') }}">Rosé & Sparkling</a>
+                            <a class="dropdown-item" href="{{ url_for('wineproj.products') }}">Fortifieds</a>
+                            <a class="dropdown-item" href="{{ url_for('wineproj.products') }}">Whites</a>
+                        </div>
+                    </li>
+                    <li>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" id="navbarDropdown" data-toggle="dropdown"
+                            role="button">Contact</a>
+                        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Our Blog</a>
+                            <a class="dropdown-item" href="#">Call us</a>
+                            <a class="dropdown-item" href="#">Facebook</a> -->
+            </div>
+            </li>
+            </ul>
+
+
+            <div class="navbar-collapse" id="rhsNav">
+
+                <div class="navbar-nav ml-auto">
+                    <form class="form-inline">
+                        <!-- <input class="form-control mx-auto" type="search" placeholder="Find your drop..."
+                                aria-label="Search"> -->
+                    </form>
+                    <a href="{{ url_for('wineproj.login') }}" class="nav-item nav-link">Login / Register</a>
+                    <a href="{{ url_for('wineproj.cart') }}" class="nav-item nav-link">CART</a>
+                </div>
+
+            </div>
+
+    </div>
+    </nav>
+    </div>
+</header>
+
+{% endblock %}

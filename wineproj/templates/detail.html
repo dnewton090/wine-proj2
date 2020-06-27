@@ -1,26 +1,17 @@
 {% extends "base.html"%}
 
-{% block main%}
-
-<div class="jumbotron jumbotron-fluid sticky-top" style="background-color: rgb(77, 7, 7)">
-    <div class="container text-white text-center">
-        <h1 class="display-3">South East Wines</h1>
-        <div class="container">
-            <h3>Drop Details</h3>
-        </div>
-    </div>
-</div>
+{% block content %}
 
 
-<div class="container">
+<div class="container" id="detail">
     <div class="row">
-        <div class="col-md-6 thumbnail">
+        <div class="col-md-5 col-sm-5 col-xs-5 thumbnail">
             <img src="/wineproj/static/img/cabsav-lg.jpg" alt class="img-detail">
         </div>
-        <div class="col-md-5 caption">
-            <h1>2014 Cabernet Sauvignon</h1>
-            <h3>Rymill Coonawarra</h3><br>
-            <h5 class="lead"><em>"Beefiest drop in the South East"</h5></em><br>
+        <div class="col-md-7 col-sm-7 col-xs-7 caption">
+            <h2>2014 Cabernet Sauvignon</h2>
+            <h4 style="text-align:center">Rymill Coonawarra</h4><br>
+            <h6 class="lead"><em>"Beefiest drop in the South East"</h6></em><br>
             <p>Description of this particular wine...</p>
             <p>Perhaps I could link this directly to a website as well...<br>
             <p>Use JavaScript to dynamically link discounts & Cart</p>

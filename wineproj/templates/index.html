@@ -1,414 +1,396 @@
 {% extends "base.html" %}
 
+{% block head %}
 {% include "includes/jumbotron.html" %}
+<!-- {% include "includes/jumbotron.html" %} -->
+{% endblock %}
 
-{% block main %}
+
+{% block content %}
 
 <!-- include the jumbotron header -->
 
+<section>
 
-<body>
-    <section>
-
-        <!--Container-->
-        <div class="container-fluid">
-            <!-- We just want one row?-->
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <img src="/wineproj/static/img/wine_red.jpg" alt="red wine" class="card-img-top img-fluid" />
-                        <div class="card-body">
-                            <h3 class="card-title">Reds</h3>
-                            <p class="text-muted">Get amongst it</p>
-                            <div class="dropdown show">
-                                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Select your drop!</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Shiraz</a>
-                                    <a class="dropdown-item" href="#">Cabernet</a>
-                                    <a class="dropdown-item" href="#">Merlot</a>
-                                </div>
+    <!--Container-->
+    <div class="container-fluid">
+        <!-- We just want one row?-->
+        <div class="row">
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <img src="/wineproj/static/img/wine_red.jpg" alt="red wine" class="card-img-top img-fluid" />
+                    <div class="card-body">
+                        <h3 class="card-title">Reds</h3>
+                        <p class="text-muted">Get amongst it</p>
+                        <div class="dropdown show">
+                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select your drop!</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Shiraz</a>
+                                <a class="dropdown-item" href="#">Cabernet</a>
+                                <a class="dropdown-item" href="#">Merlot</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!--White wine card-->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <img src="/wineproj/static/img/wine_white.jpg" alt="white wine" class="card-img-top img-fluid"
-                            id="blurred" />
-                        <div class="card-body">
-                            <h3 class="card-title">Whites</h3>
-                            <p>Get amongst it</p>
-                            <div class="dropdown show">
-                                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Select your drop!</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Sauvignon Blanc</a>
-                                    <a class="dropdown-item" href="#">Chardonnay</a>
-                                    <a class="dropdown-item" href="#">Riesling</a>
-                                </div>
+            <!--White wine card-->
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <img src="/wineproj/static/img/wine_white.jpg" alt="white wine" class="card-img-top img-fluid"
+                        id="blurred" />
+                    <div class="card-body">
+                        <h3 class="card-title">Whites</h3>
+                        <p>Get amongst it</p>
+                        <div class="dropdown show">
+                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select your drop!</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Sauvignon Blanc</a>
+                                <a class="dropdown-item" href="#">Chardonnay</a>
+                                <a class="dropdown-item" href="#">Riesling</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <img src="/wineproj/static/img/wine_rose.jpg" alt="rose wine" class="card-img-bottom img-fluid"
-                            id="img_blurred" />
-                        <div class="card-body">
-                            <h3 class="card-title">Rosé & Sparkling</h3>
-                            <p>Get amongst it</p>
-                            <div class="dropdown show">
-                                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Select your drop!</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Rosé</a>
-                                    <a class="dropdown-item" href="#">Sparkling</a>
-                                    <a class="dropdown-item" href="#">Prosecco</a>
-                                </div>
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <img src="/wineproj/static/img/wine_rose.jpg" alt="rose wine" class="card-img-bottom img-fluid"
+                        id="img_blurred" />
+                    <div class="card-body">
+                        <h3 class="card-title">Rosé & Sparkling</h3>
+                        <p>Get amongst it</p>
+                        <div class="dropdown show">
+                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select your drop!</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Rosé</a>
+                                <a class="dropdown-item" href="#">Sparkling</a>
+                                <a class="dropdown-item" href="#">Prosecco</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <img src="/wineproj/static/img/wine_fortifieds.jpg" alt="port" class="card-img-top img-fluid" />
-                        <div class="card-body">
-                            <h3 class="card-title">Fortifieds</h3>
-                            <p>Get amongst it</p>
-                            <div class="dropdown show">
-                                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Select your drop!</a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Port</a>
-                                    <a class="dropdown-item" href="#">Sherry</a>
-                                </div>
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <img src="/wineproj/static/img/wine_fortifieds.jpg" alt="port" class="card-img-top img-fluid" />
+                    <div class="card-body">
+                        <h3 class="card-title">Fortifieds</h3>
+                        <p>Get amongst it</p>
+                        <div class="dropdown show">
+                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select your drop!</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Port</a>
+                                <a class="dropdown-item" href="#">Sherry</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-    </section>
+</section>
 
-    <h2 class="display-4 text-center py-4 my-4">Select your poison</h2>
+<h2 class="display-4 text-center py-4 my-4">Select your poison</h2>
 
-    <!-- individual wines listed here -->
-    <section>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
+<!-- individual wines listed here -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
                         </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">Rymill Sandstone Cabernet Sav 2015</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">60</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card">
-                        <a href="{{ url_for('wineproj.detail') }}">
-                            <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img"
-                                alt="">
-                            <span class="store-item-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                        </a>
-                        <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
-                                <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
-                                <h5 class="store-item-value">$<strong id="store-item-price"
-                                        class="font-weight-bold">30</strong></h5>
-                            </div>
-                            <form class="form-inline">
-                                <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                                <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                    placeholder="Qty" aria-label="Quantity">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!-- end of card-->
             </div>
-    </section>
 
-    {% endblock %}
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">Rymill Sandstone Cabernet Sav 2015</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">60</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+                <div class="card">
+                    <a href="{{ url_for('wineproj.detail') }}">
+                        <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
+                        <span class="store-item-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between text-capitalize">
+                            <h5 id="store-item-name">2014 Cabernet Sauvignon</h5>
+                            <h5 class="store-item-value">$<strong id="store-item-price"
+                                    class="font-weight-bold">30</strong></h5>
+                        </div>
+                        <form class="form-inline">
+                            <a class="btn btn-info" href="#" role="button">Add to Cart</a>
+                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
+                                placeholder="Qty" aria-label="Quantity">
+                        </form>
+                    </div>
+                </div>
+            </div>
 
 
 
+            <!-- end of card-->
+        </div>
+</section>
 
-
-
-
-
-
-
-
-
+<section>
     <h2 class="display-4 text-center py-4 my-4">Meet our brands</h2>
 
     <nav class="nav nav-pills flex-column flex-md-row justify-content-center">
@@ -452,13 +434,26 @@
             <p>Established in 1891...Render Wikipedia</p>
         </div>
     </div>
+</section>
+
+{% endblock %}
 
 
 
 
 
 
-    <!-- Looking into adding Shopping Cart functionality
+
+
+
+
+
+
+
+
+
+
+<!-- Looking into adding Shopping Cart functionality
     <form name="ShoppingList">
         <fieldset>
             <legend>Shopping cart</legend>
@@ -480,25 +475,20 @@
 
 
 
-    <div class="jumbotron text-center">
-        <h2 class="display-4 text-center py-4 my-4">A brief history of the region...</h2>
+<div class="jumbotron text-center">
+    <h2 class="display-4 text-center py-4 my-4">A brief history of the region...</h2>
 
-        <p class="lead">Coonawarra’s agricultural history began in the mid-1800s when settlers recognised the potential
-            of the flat, fertile plains for sheep farming and fruit growing. Enterprising Scottish settler John Riddoch
-            planted Coonawarra’s first grapevines in 1891, thirty years after establishing a lucrative sheep farm at
-            Penola. Thanks to the work of pioneering work of people like David Wynn and Bill Redman today Coonawarra is,
-            perhaps alongside Margaret River, Australia’s most famous cool-climate region for Cabernet Sauvignon.
+    <p class="lead">Coonawarra’s agricultural history began in the mid-1800s when settlers recognised the potential
+        of the flat, fertile plains for sheep farming and fruit growing. Enterprising Scottish settler John Riddoch
+        planted Coonawarra’s first grapevines in 1891, thirty years after establishing a lucrative sheep farm at
+        Penola. Thanks to the work of pioneering work of people like David Wynn and Bill Redman today Coonawarra is,
+        perhaps alongside Margaret River, Australia’s most famous cool-climate region for Cabernet Sauvignon.
 
-            The grape varietal has found a home in the terra rossa soils of Coonawarra, producing rich, firmly
-            structured red wines that are renowned around the world. But the region is by no means a one trick pony,
-            producing a diverse range of varieties and styles. And the established winemaking families have been
-            reinforced by a new generation of winemakers in recent years, continuing the tradition of elegant cool
-            climate winemaking and bringing the region to a new audience.</p>
-        <a href="https://www.wineaustralia.com/discover-australian-wine/south-australia-wines/coonawarra"
-            alt="Coonawarra - WineAustralia">Reference: WineAustralia</a>
-    </div>
-
-
-</body>
-
-</html>
+        The grape varietal has found a home in the terra rossa soils of Coonawarra, producing rich, firmly
+        structured red wines that are renowned around the world. But the region is by no means a one trick pony,
+        producing a diverse range of varieties and styles. And the established winemaking families have been
+        reinforced by a new generation of winemakers in recent years, continuing the tradition of elegant cool
+        climate winemaking and bringing the region to a new audience.</p>
+    <a href="https://www.wineaustralia.com/discover-australian-wine/south-australia-wines/coonawarra"
+        alt="Coonawarra - WineAustralia">Reference: WineAustralia</a>
+</div>

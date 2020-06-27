@@ -1,5 +1,13 @@
+<!-- No need to put templates/base.html - this happens automatically -->
+
 {% extends "base.html" %}
 
-{% block main %}
+{% block head %}
+{% include "includes/jumbotron.html" %}
+{% endblock %}
+
+{% block content %}
+
 <h1>Test extends templating</h1>
+
 {% endblock %}

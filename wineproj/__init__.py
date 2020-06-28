@@ -3,28 +3,29 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy     # issues importing?
 
-# ! Secret key to facilitate encyrption
-# ? Pleace a key into the create_app() method into
-# * package constructor __init__.py
-
+db = SQLAlchemy()
 app = Flask(__name__, static_url_path='/wineproj/static')
+# app = Flask(__name__)
 
 
 def create_app():
     app.debug = True
+    app.secret_key = 'secretkeyneedtoupdate'
     # python import os; os.urandom(12)  # ! session encyption inside cookie
-    app.secret_key = 'q\x00\x1c\xb3j?\xe7\x84\x8c\xd7\xb6C'
 
     # sets the app configuration data
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///wineproj.sqlite'
 
+    # initialize db with flask app
     db.init_app(app)
 
     bootstrap = Bootstrap(app)
 
-    # * from wineproj import views
+    # importing modules here to avoid circular references, register blueprints of routes
     from . import views
     app.register_blueprint(views.bp)
+    # from . import admin
+    # app.register_blueprint(admin.bp)
 
     return app
 

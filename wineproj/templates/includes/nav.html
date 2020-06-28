@@ -1,7 +1,7 @@
 <header>
     <div class="container-fluid fixed-top" style="background-color: rgb(77, 7, 7)">
         <nav class="navbar navbar-expand-md navbar-dark " id="navbar">
-            <a class="navbar-brand" href="{{ url_for('wineproj.index') }}">SouthEast Wines</a>
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">SouthEast Wines</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls=navbarSupportedContent aria-expanded="false" aria-label="Toggle navigation">
@@ -14,20 +14,20 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" class="nav-link dropdown-toggle" role="button"
                             id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Products
+                            Wines
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url_for('wineproj.detail') }}">Reds</a>
-                            <a class="dropdown-item" href="{{ url_for('wineproj.detail') }}">Rosé & Sparkling</a>
-                            <a class="dropdown-item" href="{{ url_for('wineproj.detail') }}">Fortifieds</a>
-                            <a class="dropdown-item" href="{{ url_for('wineproj.detail') }}">Whites</a>
+                            <a class="dropdown-item" href="{{ url_for('main.detail') }}">Reds</a>
+                            <a class="dropdown-item" href="{{ url_for('main.detail') }}">Rosé & Sparkling</a>
+                            <a class="dropdown-item" href="{{ url_for('main.detail') }}">Fortifieds</a>
+                            <a class="dropdown-item" href="{{ url_for('main.detail') }}">Whites</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="{{ url_for('wineproj.login') }}" class="nav-item nav-link">Login / Register</a>
+                        <a href="{{ url_for('main.login') }}" class="nav-item nav-link">Login / Register</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('wineproj.cart') }}" class="nav-item nav-link">CART</a>
+                        <a href="{{ url_for('main.cart') }}" class="nav-item nav-link">CART</a>
                     </li>
                 </ul>
             </div>

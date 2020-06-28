@@ -16,15 +16,15 @@
     <div class="container-fluid">
         <!-- We just want one row?-->
         <div class="row">
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
                     <img src="/wineproj/static/img/wine_red.jpg" alt="red wine" class="card-img-top img-fluid" />
                     <div class="card-body">
                         <h3 class="card-title">Reds</h3>
                         <p class="text-muted">Get amongst it</p>
                         <div class="dropdown show">
-                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="btn btn-info" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 Select your drop!</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">Shiraz</a>
@@ -37,7 +37,7 @@
             </div>
 
             <!--White wine card-->
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
                     <img src="/wineproj/static/img/wine_white.jpg" alt="white wine" class="card-img-top img-fluid"
                         id="blurred" />
@@ -45,54 +45,54 @@
                         <h3 class="card-title">Whites</h3>
                         <p>Get amongst it</p>
                         <div class="dropdown show">
-                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="btn btn-info" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 Select your drop!</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">Sauvignon Blanc</a>
                                 <a class="dropdown-item" href="#">Chardonnay</a>
                                 <a class="dropdown-item" href="#">Riesling</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
                     <img src="/wineproj/static/img/wine_rose.jpg" alt="rose wine" class="card-img-bottom img-fluid"
                         id="img_blurred" />
                     <div class="card-body">
-                        <h3 class="card-title">Rosé & Sparkling</h3>
+                        <h3 class="card-title">Rosé</h3>
                         <p>Get amongst it</p>
                         <div class="dropdown show">
-                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="btn btn-info" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 Select your drop!</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">Rosé</a>
                                 <a class="dropdown-item" href="#">Sparkling</a>
                                 <a class="dropdown-item" href="#">Prosecco</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <img src="/wineproj/static/img/wine_fortifieds.jpg" alt="port" class="card-img-top img-fluid" />
+                    <img src="/wineproj/static/img/wine_ports.jpg" alt="port" class="card-img-top img-fluid" />
                     <div class="card-body">
-                        <h3 class="card-title">Fortifieds</h3>
+                        <h3 class="card-title">Ports</h3>
                         <p>Get amongst it</p>
                         <div class="dropdown show">
-                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="btn btn-info" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 Select your drop!</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">Port</a>
                                 <a class="dropdown-item" href="#">Sherry</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -108,9 +108,9 @@
 <section>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -124,16 +124,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -147,16 +145,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -170,16 +166,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/cabsav-lg.jpg" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -193,16 +187,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2 col-lg-4" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -216,16 +208,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -239,16 +229,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -262,16 +250,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -285,16 +271,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -308,16 +292,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -331,16 +313,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -354,16 +334,14 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-3 col-sm-6 col-xs-6">
+            <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('wineproj.detail') }}">
+                    <a href="{{ url_for('main.detail') }}">
                         <img src="/wineproj/static/img/CabSav-4.jpg" id="cabsav" class="card-img-top store-img" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -377,8 +355,6 @@
                         </div>
                         <form class="form-inline">
                             <a class="btn btn-info" href="#" role="button">Add to Cart</a>
-                            <input class="form-control form-inline ml-auto col-md-2 col-sm-2" type="text"
-                                placeholder="Qty" aria-label="Quantity">
                         </form>
                     </div>
                 </div>

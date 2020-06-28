@@ -2,8 +2,8 @@
 # Flask-WTF maps form into an object, that can be used in Python OOP
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, InputRequired, email
+from wtforms.fields import SubmitField, StringField
+from wtforms.validators import InputRequired, email
 
 # FlaskForm represents the form as an Object – better OOP practise
 

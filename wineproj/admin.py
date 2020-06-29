@@ -48,14 +48,8 @@ bp = Blueprint('admin', __name__, url_prefix='/admin')
 def dbseed():
     category1 = Category(name="Reds", image="wine_red.jpg", description='''Red wine is a type of wine made from dark-colored grape varieties, and its category includes many of the prized drops in the South East. The actual color of the wine can range from intense violet, typical of young wines, through to brick red for mature wines and brown for older red wines. Common types found in the South East include Cabernet Sauvignon, Shiraz, Grenache, Merlot and Pino Noir.''')
     category2 = Category(name="Whites", image="wine_white.jpg", description='''The wide variety of white wines comes from the large number of varieties, methods of winemaking, and ratios of residual sugar. White wine is mainly from "white" grapes, which are green or yellow in colour, such as Chardonnay, Sauvignon blanc, and Riesling. ''')
-    category3 = Category(name="Rose", image="wine_rose.jpg",
-                         description='''There are three major ways to produce rosé wine: skin contact, saignée, and blending. 
-        Rosé wines can be made still, semi-sparkling or sparkling and with a wide range of sweetness levels from highly dry Provençal rosé to sweet White Zinfandels and blushes. 
-        The beauty of a rosé blend is that they can be formulated from awide variety of grapes and can be found all around the globe. ''')
-    category4 = Category(name="Fortifieds", image="wine_ports.jpg",
-                         description='''Fortified wine is a wine to which a distilled spirit (usually brandy) has been added.
-        Over time winemakers have developed many different styles of fortified wine, including port, sherry, madeira, Marsala, Commandaria wine, and the aromatised wine vermouth.
-        SE Wines speciality is Port wine which is a strong, sweet dark red complex originating from Portugal. It is typically drunk as a dessert wine. ''')
+    category3 = Category(name="Rose", image="wine_rose.jpg", description='''There are three major ways to produce rosé wine: skin contact, saignée, and blending. Rosé wines can be made still, semi-sparkling or sparkling and with a wide range of sweetness levels from highly dry Provençal rosé to sweet White Zinfandels and blushes. The beauty of a rosé blend is that they can be formulated from awide variety of grapes and can be found all around the globe. ''')
+    category4 = Category(name="Fortifieds", image="wine_ports.jpg", description='''Fortified wine is a wine to which a distilled spirit (usually brandy) has been added. Over time winemakers have developed many different styles of fortified wine, including port, sherry, madeira, Marsala, Commandaria wine, and the aromatised wine vermouth. SE Wines speciality is Port wine which is a strong, sweet dark red complex originating from Portugal. It is typically drunk as a dessert wine. ''')
     try:
         db.session.add(category1)
         db.session.add(category2)
@@ -94,7 +88,7 @@ def dbseed():
     # Insert Ports
     w11 = Wine(category_id=category4.id, blend="Port", name="Galway Pipe", vintage="2010", region="Kalangadoo, SA", image='port_galway.png', price='31.00',
                description='Port lovers have known about the quality of Galway Pipe for decades and with an average age of twelve years that gives this iconic tawny luscious flavours of fruitcake and raisin, its balanced nicely by nutty rancio characteristics.')
-    w12 = Wine(category_id=category4.id, blend="Port", name="Penfolds", vintage="2012", region="Dry Creek, SA", image='port_penfolds', price='33.00',
+    w12 = Wine(category_id=category4.id, blend="Port", name="Penfolds", vintage="2012", region="Dry Creek, SA", image='port_penfolds.png', price='33.00',
                description='A blend of many outstanding tawny components separately matured in seasoned old oak casks, with a minimum blended average age of ten years. The results yields a wine of generous concentration, vitality, exceptional balance of fruit and oak age complexity. The tawny lingers in the mouth, finishing clean and tight.')
 
     try:

@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, url_for, request, session, flash, 
 from datetime import datetime
 from wineproj.forms import CheckoutForm
 from wineproj.models import Order, Wine, Category
+from . import db
 
 # Had a huge issue with 2x bp objects – when naming the bp in admin page as well–
 bp = Blueprint('main', '__name__')
@@ -11,45 +12,77 @@ bp = Blueprint('main', '__name__')
 @bp.route('/')
 @bp.route('/index')
 def index():
-    # categories = Category.query.order_by(Category.name).all()
-    # return render_template('index.html', categories=categories)
-    return render_template('index.html')
+    # SQLAlchemy ORM queries
+    categories = Category.query.order_by(Category.id).all()
+    wines = Wine.query.order_by(Wine.id).all()
+
+    return render_template('index.html', categories=categories, wines=wines)
+    # return render_template('index.html')
+
+# * How to display the name corresponding to the filter?  i.e. wines/reds/ (not wines/1/)
 
 
-@bp.route('/wines/<int:category>/')
-def wines(category):
-    wines = Wine.query.filter(Wine.category_id == category)
+@bp.route('/wines/<int:categoryid>/')
+def wines(categoryid):
+    wines = Wine.query.filter(Wine.category_id == categoryid)
     return render_template('wines.html', wines=wines)
 
+# ! passing the same variable into another bp (wines) causes the BP Association Error
+# ? You cannot have the same function name –– how then to overload?
 
-@bp.route('/checkout', methods=["POST", "GET"])
-def checkout():
-    return "not implemented yet"
-    # form = CheckoutForm()
-    # if 'order_id' in session:
-    #     order = Order.query.get_or_404(session['order_id'])
+# @bp.route('/wines')
+# def all():
+#     products = Wine.query.order_by(Wine.id).all()
+#     return render_template('wines.html', products=products)
 
-    #     if form.validate_on_submit():
-    #         order.status = True
-    #         order.firstname = form.firstname.data
-    #         order.surname = form.surname.data
-    #         order.email = form.email.data
-    #         order.phone = form.phone.data
-    #         totalcost = 0
-    #         for wine in order.wines:
-    #             totalcost = totalcost + wine.price
-    #         order.totalcost = totalcost
-    #         order.date = datetime.now()
-    #         try:
-    #             db.session.commit()
-    #             del session['order_id']
-    #             flash(
-    #                 'Testing, 123')
-    #             return redirect(url_for('main.index'))
-    #         except:
-    #             return 'There was an issue completing your order'
 
-    # return render_template('checkout.html', form=form)
+@bp.route('/order', methods=['POST', 'GET'])
+def order():
+    # This looks inside the name field of the form
+    wine_id = request.values.get('wine_id')
+
+    # retrieve order if there is one
+    if 'order_id' in session.keys():
+        order = Order.query.get(session['order_id'])
+        # order will be None if order_id stale
+    else:
+        # there is no order
+        order = None
+
+    # create new order if needed
+    if order is None:
+        order = Order(status=False, firstname='', surname='',
+                      email='', phone='', totalcost=0, date=datetime.now())
+        try:
+            db.session.add(order)
+            db.session.commit()
+            session['order_id'] = order.id
+        except:
+            print('failed at creating a new order')
+            order = None
+
+    # calcultate totalprice
+    totalprice = 0
+    if order is not None:
+        for wine in order.wines:
+            totalprice = totalprice + wine.price
+
+    # are we adding an item?  Variable in the request (sent by POST)
+    if wine_id is not None and order is not None:
+        wine = Wine.query.get(wine_id)
+        if wine not in order.wines:
+            try:
+                order.wines.append(wine)
+                db.session.commit()
+            except:
+                return 'There was an issue adding the item to your basket'
+            return redirect(url_for('main.order'))
+        else:
+            flash('item already in basket')
+            return redirect(url_for('main.order'))
+
+    # !! Need to get this up & running
+    return render_template('order.html', order=order, totalprice=totalprice)
 
 
 @bp.route('/cart', methods=["POST", "GET"])
@@ -64,55 +97,6 @@ def cart():
     return render_template('cart.html')
 
 # Referred to as "Basket" to the user
-
-
-@bp.route('/order', methods=['POST', 'GET'])
-def order():
-    return "not implemented yet"
-# def order():
-#     wine_id = request.values.get('wine_id')
-
-#     # retrieve order if there is one
-#     if 'order_id' in session.keys():
-#         order = Order.query.get(session['order_id'])
-#         # order will be None if order_id stale
-#     else:
-#         # there is no order
-#         order = None
-
-#     # create new order if needed
-#     if order is None:
-#         order = Order(status=False, firstname='', surname='',
-#                       email='', phone='', totalcost=0, date=datetime.now())
-#         try:
-#             db.session.add(order)
-#             db.session.commit()
-#             session['order_id'] = order.id
-#         except:
-#             print('failed at creating a new order')
-#             order = None
-
-#     # calcultate totalprice
-#     totalprice = 0
-#     if order is not None:
-#         for tour in order.tours:
-#             totalprice = totalprice + tour.price
-
-#     # are we adding an item?
-#     if wine_id is not None and order is not None:
-#         tour = Wine.query.get(wine_id)
-#         if tour not in order.tours:
-#             try:
-#                 order.tours.append(tour)
-#                 db.session.commit()
-#             except:
-#                 return 'There was an issue adding the item to your basket'
-#             return redirect(url_for('main.order'))
-#         else:
-#             flash('item already in basket')
-#             return redirect(url_for('main.order'))
-
-#     return render_template('order.html', order=order, totalprice=totalprice)
 
 
 @bp.route('/login')
@@ -144,27 +128,53 @@ def nav():
 # Delete specific basket items
 @bp.route('/deleteorderitem', methods=['POST'])
 def deleteorderitem():
-    return "not implemented yet"
-# def deleteorderitem():
-#     id = request.form['id']
-#     if 'order_id' in session:
-#         order = Order.query.get_or_404(session['order_id'])
-#         tour_to_delete = Wine.query.get(id)
-#         try:
-#             order.tours.remove(tour_to_delete)
-#             db.session.commit()
-#             return redirect(url_for('main.order'))
-#         except:
-#             return 'Problem deleting item from order'
-#     return redirect(url_for('main.order'))
-
+    id = request.form['id']
+    if 'order_id' in session:
+        order = Order.query.get_or_404(session['order_id'])
+        wine_to_delete = Wine.query.get(id)
+        try:
+            order.wines.remove(wine_to_delete)
+            db.session.commit()
+            return redirect(url_for('main.order'))
+        except:
+            return 'Problem deleting item from order'
+    return redirect(url_for('main.order'))
 
 # Scrap basket
-@bp.route('/deleteorder')
-def deleteorder():
-    return "not implemented yet"
-# def deleteorder():
-#     if 'order_id' in session:
-#         del session['order_id']
-#         flash('All items deleted')
-#     return redirect(url_for('main.index'))
+
+
+@bp.route('/deleteall')
+def deleteall():
+    if 'order_id' in session:
+        del session['order_id']
+        flash('All items deleted')
+    return redirect(url_for('main.index'))
+
+
+@bp.route('/checkout', methods=["POST", "GET"])
+def checkout():
+    form = CheckoutForm()
+    if 'order_id' in session:
+        order = Order.query.get_or_404(session['order_id'])
+
+        if form.validate_on_submit():
+            order.status = True
+            order.firstname = form.firstname.data
+            order.surname = form.surname.data
+            order.email = form.email.data
+            order.address = form.address.data
+            totalcost = 0
+            for wine in order.wines:
+                totalcost = totalcost + wine.price
+            order.totalcost = totalcost
+            order.date = datetime.now()
+            try:
+                db.session.commit()
+                del session['order_id']
+                flash(
+                    'Testing, 123')
+                return redirect(url_for('main.index'))
+            except:
+                return 'There was an issue completing your order'
+
+    return render_template('checkout.html', form=form)

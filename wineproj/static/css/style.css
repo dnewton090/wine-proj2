@@ -2,6 +2,11 @@
     padding-top: 100px;
 }
 
+/* ? I need to add padding to the top of the wines page (cannot figure out CSS) */
+.wines {
+    padding-top: 100px;
+}
+
 .jumbotron {
     background: url('https://instagram.fadl5-1.fna.fbcdn.net/v/t51.2885-15/e35/103583977_143928703894345_4753461742128889119_n.jpg?_nc_ht=instagram.fadl5-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=iEno2yyDHrMAX-MABQx&oh=a14b1ca12b8018e114e47929901a0b30&oe=5F1122B7') no-repeat center center;
     background-size: 100%;

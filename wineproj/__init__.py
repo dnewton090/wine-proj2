@@ -24,6 +24,8 @@ def create_app():
     # importing modules here to avoid circular references, register blueprints of routes
     from . import views
     app.register_blueprint(views.bp)
+
+    # ! commented out the ADMIN blupeint after loading
     # from . import admin
     # app.register_blueprint(admin.bp)
 

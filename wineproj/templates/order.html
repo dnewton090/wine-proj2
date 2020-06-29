@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% include "includes/jumbotron.html" %}
+{% block content %}
+<!-- display contents of user basket -->
+
+<!-- ! return render_template('order.html', order=order, totalprice=totalprice) -->
+
+<section>
+    <h3 class="text-center wines">Finalize Cart</h3>
+
+    <div class="container">
+        <!-- each tour on seperate row -->
+        {% for wine in order.wines %}
+        <div class="row shadow-md my-row mb-1">
+            <div class="col-sm-10 card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2">
+                            <img class="img-thumbnail" src="{{url_for('static', filename=('img/' + wine.image))}}">
+                        </div>
+                        <div class="col-5">
+                            <h6><strong>{{ wine.name}}</strong></h6>
+                            <h6>{{ wine.blend}} </h6>
+                            <p><i>{{wine.region}}</i></p>
+                        </div>
+                        <div class="col-5" , style="display: flex; justify-content: flex-end">
+                            <h5>{{ "$%.2f"|format(wine.price) }}</h5>
+                            <!-- delete item button -->
+                        </div>
+                        <div class="col-12">
+                            <!-- Item Description -->
+                            <p class="card-text">{{wine.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right column has price and delete button -->
+            <div class="col-sm-2">
+                <form method="POST" action="{{url_for('main.deleteorderitem')}}">
+                    <input type="hidden" id="id" name="id" value="{{wine.id}}">
+                    <input type="submit" value="Delete" class="btn btn-info mb-1">
+                </form>
+                <!-- <form>
+                    <input type="submit" value="Qty" class="btn btn-info mb-1">
+                </form>
+                <div class="col-md-4 quantity">
+                    <label for="quantity">Quantity:</label>
+                    <input id="quantity" type="number" value="1" class="form-control quantity-input">
+                </div> -->
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- total price and page controls -->
+        <section>
+            <div class="row co-12 d-flex">
+                <h5 class="mt-4">Quote = {{ "$%.2f"|format(totalprice) }}</h5>
+            </div>
+
+            <div class="row col-12 d-flex mb-1">
+                <a href="{{ url_for('main.index') }}" class="btn btn-primary mr-4">Back to Browse</a>
+                <a href="{{ url_for('main.checkout') }}" class="btn btn-primary mr-4">Checkout</a>
+                <a href="{{ url_for('main.deleteall') }}" class="btn btn-primary">Delete Entire Basket</a>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock %}

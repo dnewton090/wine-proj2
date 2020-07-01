@@ -1,23 +1,39 @@
 {% extends 'base.html' %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block main %}
+{% include "includes/jumbotron.html" %}
+{% block content %}
+
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="row form-group col-md-6">
                 <h1>Checkout</h1>
                 <p>
-                    Thank you for your interest. Please provide your details so that one of our awesome tour agents can
-                    contact you to finalise details and take payment. Thank you!
+                    You have successfully made it through to the final stage!! Epic job!!
+                    <br>
+                    Please enter your details to confirm the transaction.
                 </p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                {{wtf.quick_form(form)}}
+
+            <!-- There are different ways to represent the form...This method uses Flask-Bootstrap  -->
+            <!-- Bootstrap is included in the __init__.py -->
+            <!-- <div class="row form-grou0p col-md-3">
+                <div>{{ wtf.form_field(form.firstname) }}</div>
             </div>
+            <div class="row form-group col-md-3">
+                <div> {{ wtf.form_field(form.surname) }}</div>
+                <br> -->
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6">
+            {{wtf.quick_form(form)}}
         </div>
     </div>
+    </div>
 </section>
+
+
 {% endblock %}

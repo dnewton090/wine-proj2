@@ -10,7 +10,7 @@ app = Flask(__name__, static_url_path='/wineproj/static')
 
 def create_app():
     app.debug = True
-    app.secret_key = 'secretkeyneedtoupdate'
+    app.secret_key = 'hexadecimalwarrior'
     # python import os; os.urandom(12)  # ! session encyption inside cookie
 
     # sets the app configuration data
@@ -19,7 +19,8 @@ def create_app():
     # initialize db with flask app
     db.init_app(app)
 
-    bootstrap = Bootstrap(app)
+    # * Changed this to avoid naming conflicts (Assertion Errors)
+    bootstrap2 = Bootstrap(app)
 
     # importing modules here to avoid circular references, register blueprints of routes
     from . import views

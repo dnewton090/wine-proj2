@@ -25,6 +25,8 @@ orderdetails = db.Table('orderdetails',
                             'orders.id'), nullable=False),
                         db.Column('wine_id', db.Integer, db.ForeignKey(
                             'wines.id'), nullable=False),
+                        # db.Column('order_date', db.DateTime)
+
                         db.PrimaryKeyConstraint('order_id', 'wine_id'))
 
 

@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, url_for, request, session, flash, 
 from datetime import datetime
 from wineproj.forms import CheckoutForm
 from wineproj.models import Order, Wine, Category
+from .forms import CheckoutForm
 from . import db
 
 # Had a huge issue with 2x bp objects – when naming the bp in admin page as well–
@@ -172,7 +173,7 @@ def checkout():
                 db.session.commit()
                 del session['order_id']
                 flash(
-                    'Testing, 123')
+                    'Quick flash message to determine if redirect is working')
                 return redirect(url_for('main.index'))
             except:
                 return 'There was an issue completing your order'

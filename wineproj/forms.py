@@ -1,11 +1,10 @@
 # WTForms do a lot of the heavy lifting in validation & CSRF
 # Flask-WTF maps form into an object, that can be used in Python OOP
-
 from flask_wtf import FlaskForm
 from wtforms.fields import SubmitField, StringField
 from wtforms.validators import InputRequired, email
 
-# FlaskForm represents the form as an Object – better OOP practise
+# FlaskForm represents the form as an Class – better OOP practise
 
 
 class CheckoutForm(FlaskForm):

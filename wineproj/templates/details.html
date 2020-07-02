@@ -4,7 +4,7 @@
 
 {% block content %}
 
-{% for vino in product %}
+{% for vino in spotlight %}
 <div class="row">
     <!-- each wine is a bootstrap card -->
     <div class="col-md-6 col-lg-4 col-sm-6 col-xs-6">
@@ -14,13 +14,13 @@
             </a>
             <div class="card-body">
                 <div class="card-text d-flex justify-content-between text-capitalize">
-                    <h5 id="store-item-name"> {{ spotlight.name }} ({{ spotlight.vintage }})</h5>
-                    <h5 class="store-item-value">$<strong id="store-item-price">{{ spotlight.price }}</strong></h5>
+                    <h5 id="store-item-name"> {{ vino.name }} ({{ vino.vintage }})</h5>
+                    <h5 class="store-item-value">$<strong id="store-item-price">{{ vino.price }}</strong></h5>
                 </div>
 
-                <h6 id="store-item-region"> {{ spotlight.blend }} </h6>
-                <h6 id="store-item-region"><i> {{ spotlight.region }} </i></h6>
-                <p id="store-item-description"> {{ spotlight.description }} </p>
+                <h6 id="store-item-region"> {{ vino.blend }} </h6>
+                <h6 id="store-item-region"><i> {{ vino.region }} </i></h6>
+                <p id="store-item-description"> {{ vino.description }} </p>
             </div>
             <!-- <div class="card-footer"> -->
             <div>

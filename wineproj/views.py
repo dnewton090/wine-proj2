@@ -36,9 +36,9 @@ def wines(categoryid):
 
 @bp.route('/details/<int:productid>')
 def details(productid):
-    wines.query.filter(id=productid)
+    spotlight = Wine.query.filter(id=productid)
     # spotlight = Wine.query.filter(Wine.id=productid)
-    return render_template('details.html')
+    return render_template('details.html', spotlight=spotlight)
 
 
 @bp.route('/order', methods=['POST', 'GET'])

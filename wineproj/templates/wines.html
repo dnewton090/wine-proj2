@@ -1,17 +1,18 @@
-{% extends "base.html" %}
-
+{% extends "base_nojumbo.html" %}
+{% block title %}Select your drop...{% endblock%}
 {% block content %}
 <!-- Display wines -->
 <section>
     <div class="container-fluid wines">
-        <h2 class="display-4 wines text-center py-4 my-4">Select your drop...</h2>
+        <h2 class="display-4 text-center py-1 my-1">Select your drop...</h2>
 
         <div class="row">
             <!-- each wine is a bootstrap card -->
             {% for wine in wines %}
             <div class="col-md-6 col-lg-4 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="{{ url_for('main.detail') }}">
+                    <a href="">
+                        <!-- want to link a search {{wine.id}} => details -->
                         <img src="{{ url_for('static', filename='img/'+wine.image)}}" class="card-img-bottom" alt="">
                     </a>
                     <div class="card-body">
@@ -29,7 +30,7 @@
                         <!-- Form action relates to POST request, WTForms -->
                         <!-- Forms don't need anchor tags -->
                         <form action="{{url_for('main.order') }}">
-                            <input type="hidden" id="wine_id" name="wine_id" value="{{ wine.id}}">
+                            <input type="hidden" id="wine_id" name="wine_id" value="{{wine.id}}">
                             <input class="btn btn-info" type="submit" role="button" value="Add to Cart">
                         </form>
                     </div>

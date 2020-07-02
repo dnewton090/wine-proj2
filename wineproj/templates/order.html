@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-{% include "includes/jumbotron.html" %}
+<!-- {% include "includes/jumbotron.html" %} -->
+{% block title %}Your Wine Cart{% endblock %}
+
 {% block content %}
 <!-- display contents of user basket -->
-
 <!-- ! return render_template('order.html', order=order, totalprice=totalprice) -->
 
 <section>
-    <h3 class="text-center wines">Finalize Cart</h3>
-
-    <div class="container">
-        <!-- each tour on seperate row -->
+    <div class=" container">
+        <!-- each wine on seperate row -->
         {% for wine in order.wines %}
         <div class="row shadow-md my-row mb-1">
             <div class="col-sm-10 card">
@@ -19,13 +18,12 @@
                             <img class="img-thumbnail" src="{{url_for('static', filename=('img/' + wine.image))}}">
                         </div>
                         <div class="col-5">
-                            <h6><strong>{{ wine.name}}</strong></h6>
+                            <h6><strong>{{wine.name}}</strong></h6>
                             <h6>{{ wine.blend}} </h6>
                             <p><i>{{wine.region}}</i></p>
                         </div>
                         <div class="col-5" , style="display: flex; justify-content: flex-end">
                             <h5>{{ "$%.2f"|format(wine.price) }}</h5>
-                            <!-- delete item button -->
                         </div>
                         <div class="col-12">
                             <!-- Item Description -->
@@ -37,6 +35,8 @@
 
             <!-- right column has price and delete button -->
             <div class="col-sm-2">
+                <!-- !! Replace method=POST for request.values.get with a HIDDEN input type -->
+                <!-- * no commas inside HTML elements -->
                 <form method="POST" action="{{url_for('main.deleteorderitem')}}">
                     <input type="hidden" id="id" name="id" value="{{wine.id}}">
                     <input type="submit" value="Delete" class="btn btn-info mb-1">
@@ -58,10 +58,10 @@
                 <h5 class="mt-4">Quote = {{ "$%.2f"|format(totalprice) }}</h5>
             </div>
 
-            <div class="row col-12 d-flex mb-1">
-                <a href="{{ url_for('main.index') }}" class="btn btn-primary mr-4">Back to Browse</a>
-                <a href="{{ url_for('main.checkout') }}" class="btn btn-primary mr-4">Checkout</a>
-                <a href="{{ url_for('main.deleteall') }}" class="btn btn-primary">Delete Entire Basket</a>
+            <div class="col-md-4 d-flex mb-1">
+                <a href="{{ url_for('main.index') }}" class="btn btn-info">Back to Browse</a>
+                <a href="{{ url_for('main.checkout') }}" class="btn btn-info">Checkout</a>
+                <a href="{{ url_for('main.deleteall') }}" class="btn btn-info">Delete Entire Basket</a>
             </div>
         </section>
     </div>

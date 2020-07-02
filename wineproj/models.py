@@ -26,7 +26,7 @@ orderdetails = db.Table('orderdetails',
                         db.Column('wine_id', db.Integer, db.ForeignKey(
                             'wines.id'), nullable=False),
                         # db.Column('order_date', db.DateTime)
-
+                        # * Enter additional Quantity fields
                         db.PrimaryKeyConstraint('order_id', 'wine_id'))
 
 
@@ -57,6 +57,7 @@ class Order(db.Model):
     surname = db.Column(db.String(64))
     email = db.Column(db.String(128))
     phone = db.Column(db.String(32))
+    address = db.Column(db.String(128))
     date = db.Column(db.DateTime)
     totalcost = db.Column(db.Float)
     wines = db.relationship("Wine", secondary=orderdetails, backref="orders")

@@ -1,18 +1,18 @@
-
+#detail {
+    padding-top: 100px;
+}
 
 /* ? I need to add padding to the top of the wines page (cannot figure out CSS) */
 .wines {
-    padding-top: 70px;
-    padding-bottom: 70px;
-
+    padding-top: 100px;
 }
 
 .jumbotron {
     background: url('https://instagram.fadl5-1.fna.fbcdn.net/v/t51.2885-15/e35/103583977_143928703894345_4753461742128889119_n.jpg?_nc_ht=instagram.fadl5-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=iEno2yyDHrMAX-MABQx&oh=a14b1ca12b8018e114e47929901a0b30&oe=5F1122B7') no-repeat center center;
-    background-size: 110%;
-    padding-top: 150px;
+    background-size: 100%;
+    padding-top: 100px;
     background-position: 10% 10%;
-    margin-bottom: 10px;
+    padding-bottom: 100px;
   }
 
 
@@ -21,8 +21,25 @@
     background-color: #8064A2 !important;
 }
 
+/* to decrease the size of the image on the product page */
+.img-responsive{
+    display: block;
+    max-width: 80%;
+    height: auto;
+}
 
-/* from https://bbbootstrap.com/snippets/bootstrap-ecommerce-shopping-cart-item-summary-44021562 */
+.img-detail{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.bodycart {
+    padding-top: 100px
+}
+
+/* copied from https://bbbootstrap.com/snippets/bootstrap-ecommerce-shopping-cart-item-summary-44021562 */
+
 bodycopied {
     background: #ddd;
     min-height: 100vh;
@@ -46,6 +63,34 @@ bodycopied {
     border: transparent
 }
 
+@media(max-width:767px) {
+    .card {
+        margin: 3vh auto
+    }
+}
+
+.cart {
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem
+}
+
+@media(max-width:767px) {
+    .cart {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem
+    }
+}
+
+.summary {
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65)
+}
 
 @media(max-width:767px) {
     .summary {
@@ -72,6 +117,7 @@ bodycopied {
 
 .main {
     margin: 0;
+    padding: 2vh 0;
     width: 100%
 }
 
@@ -80,6 +126,14 @@ bodycopied {
     padding: 0 1vh
 }
 
+a {
+    padding: 0 1vh
+}
+
+.close {
+    margin-left: auto;
+    font-size: 0.7rem
+}
 
 img {
     width: 3.5rem
@@ -89,6 +143,13 @@ img {
     margin-top: 4.5rem
 }
 
+h5 {
+    margin-top: 4vh
+}
+
+hr {
+    margin-top: 1.25rem
+}
 
 form {
     padding: 2vh 0

@@ -20,7 +20,8 @@ def create_app():
     db.init_app(app)
 
     # * Changed this to avoid naming conflicts (Assertion Errors)
-    bootstrap2 = Bootstrap(app)
+    # ! This has been really annoying...No idea why this happens
+    bootstrap4 = Bootstrap(app)
 
     # importing modules here to avoid circular references, register blueprints of routes
     from . import views
@@ -32,13 +33,11 @@ def create_app():
 
     return app
 
-
-@app.errorhandler(404)
+# ! Maybe these are causing the bootstrap naming conflicts
+# @app.errorhandler(404)
 # inbuilt function which takes error as parameter
-def not_found(e):
-    return render_template("404.html")
-
-
-@app.errorhandler(500)
-def internal_error(e):
-    return render_template("500.html")
+# def not_found(e):
+#     return render_template("404.html")
+# @app.errorhandler(500)
+# def internal_error(e):
+#     return render_template("500.html")

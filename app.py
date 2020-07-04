@@ -1,5 +1,4 @@
-# ! note the inclusion of the __init__.py file ==> wineproj is a pkg
-
+# Importing create_app function from the /wineproj folder
 from wineproj import create_app
 
 

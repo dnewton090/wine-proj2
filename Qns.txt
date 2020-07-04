@@ -1,7 +1,0 @@
-1. How to get the navbar to stay put?
->>>>   https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
-
-2. When you override / or style CSS via an ID, it overrides Bootstrap?
->>>>   In which part of the index.html can I re-order so it won't override?
-
-3. 

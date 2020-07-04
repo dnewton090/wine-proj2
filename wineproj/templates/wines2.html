@@ -1,0 +1,74 @@
+{% extends "base_nojumbo.html" %}
+{% block title %}Select your drop...{% endblock%}
+{% block content %}
+<!-- Display wines -->
+
+<section>
+    <div class="container-fluid wines">
+        <h2 class="display-4 text-center my-1 mb-3">...Drop it like it's hot...</h2><br>
+
+        <div class="row">
+            <!-- each wine is a bootstrap card -->
+            {% for wine in wines2 %}
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6">
+                <div class="card">
+                    <h2 class="text-center" id="store-item-name"> {{ wine.name }}</h2>
+
+                    <a href="">
+                        <!-- want to link a search {{wine.id}} => details -->
+                        <img src="{{ url_for('static', filename='img/'+wine.image)}}" class="card-img-bottom" alt="">
+                    </a>
+                    <div class="text-center">
+                        <h5 class="store-item-value"><strong id="store-item-price">Single:
+                                ${{ "%.2f"|format(wine.price) }}</strong>
+                        </h5>
+                        <h5 class="store-item-value"><strong id="store-item-price">Dozen:
+                                ${{ "%.2f"|format(12*0.8*wine.price) }}</strong>
+                            <h6><i>(20% discount)</i></h6>
+                        </h5>
+                    </div>
+                </div>
+                <br>
+                <p>Coonawarra’s agricultural history began in the mid-1800s when settlers recognised the
+                    potential of the flat, fertile plains for sheep farming and fruit growing. Enterprising Scottish
+                    settler
+                    John Riddoch planted Coonawarra’s first grapevines in 1891, thirty years after establishing a
+                    lucrative sheep
+                    farm at Penola. <span><a
+                            href="https://www.wineaustralia.com/discover-australian-wine/south-australia-wines/coonawarra"
+                            alt="Coonawarra - WineAustralia"><i>Link: WineAustralia</i></a></span></p>
+            </div>
+            <div class="col-lg-7 col-md-6 col-md-6 col-sm-6 col-xs-6">
+                <h5 id="store-item-name"> {{ wine.blend }} | {{ wine.vintage }}</h5>
+                <h5 id="store-item-name"> </h5>
+                <h6 id="store-item-region"><i> {{ wine.region }} </i></h6>
+                <p id="store-item-description"> {{ wine.description }} </p>
+                <h5 class="">Pay us a visit!</h2>
+
+                    <style>
+
+                    </style>
+
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 google-maps card" id="map-container-google-1"
+                        class="z-depth-1-half map-container" style="height: 330px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223434.9772550023!2d140.61224155355515!3d-37.177517752081414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6acb0635ed4c05fd%3A0x5df6d0504476228d!2sRymill%20Coonawarra!5e0!3m2!1spt-BR!2sau!4v1592193752664!5m2!1spt-BR!2sau"
+                            width="300" height="300" frameborder="2" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+
+                    <div class="card-body">
+                        <form action="{{url_for('main.order') }}">
+                            <input type="hidden" id="wine_id" name="wine_id" value="{{wine.id}}">
+                            <input class="btn btn-info" type="submit" role="button" value="Add to Cart">
+                        </form>
+                    </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+</section>
+
+{% endblock %}

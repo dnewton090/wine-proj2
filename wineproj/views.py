@@ -19,26 +19,20 @@ def index():
     return render_template('index.html', categories=categories, wines=wines)
     # return render_template('index.html')
 
-# * How to display the name corresponding to the filter?  i.e. wines/reds/ (not wines/1/)
 
-
-@bp.route('/wines/<int:categoryid>/')
+@bp.route('/winecategory/<int:categoryid>/')
 def wines(categoryid):
     wines = Wine.query.filter(Wine.category_id == categoryid)
     return render_template('wines.html', wines=wines)
 
+
+@bp.route('/detail/<int:id>/')
+def wines2(id):
+    wines2 = Wine.query.filter(Wine.id == id)
+    return render_template('wines2.html', wines2=wines2)
+
 # ! passing the same variable into another bp (wines) causes the BP Association Error
 # ? You cannot have the same function name –– how then to overload?
-# @bp.route('/wines')
-# def all():
-#     return render_template('wines.html', products=products)
-
-
-@bp.route('/details/<int:productid>')
-def details(productid):
-    spotlight = Wine.query.filter(id=productid)
-    # spotlight = Wine.query.filter(Wine.id=productid)
-    return render_template('details.html', spotlight=spotlight)
 
 
 @bp.route('/order', methods=['POST', 'GET'])
@@ -55,9 +49,9 @@ def order():
 
     # create new order -- logically follows on from above
     if order is None:
-        # order = Order(status=False, totalcost=0, date=datetime.now())
-        order = Order(status=False, firstname='', surname='',
-                      email='', address='', totalcost=0, date=datetime.now())
+        order = Order(status=False, totalcost=0, date=datetime.now())
+        # order = Order(status=False, firstname='', surname='',
+        #               email='', address='', totalcost=0, date=datetime.now())
         try:
             db.session.add(order)
             db.session.commit()                 # to update SQLite
@@ -110,16 +104,12 @@ def cart():
 def login():
     return render_template('login.html')
 
+# For testing
+
 
 @bp.route('/base')
 def base():
     return render_template('base.html')
-
-# @bp.route('/wines')
-# def wines():©
-#     return render_template('wines.html')
-
-# Used for testing out the NavBar
 
 
 @bp.route('/nav')
@@ -144,7 +134,7 @@ def deleteorderitem():
             return 'Orders must be deleted from the Cart'
     return redirect(url_for('main.order'))
 
-# Scrap basket
+# Deleting the basket & sessionID
 
 
 @bp.route('/deleteall')
@@ -175,47 +165,17 @@ def checkout():
                 totalcost = totalcost + wine.price
             order.totalcost = totalcost
             order.date = datetime.now()
+            print('First name: {}\nLast name: {}\nEmail: {}\nAddress: {}'
+                  .format(request.form.get('firstname'), request.form.get('surname'), request.form.get('phone'),
+                          request.form.get('address'), request.form.get('email')))
             try:
                 db.session.commit()
-                print('First name: {}\nLast name: {}\nEmail: {}\nAddress: {}'
-                      .format(request.form.get('firstname'), request.form.get('surname'), request.form.get('phone'),
-                              request.form.get('address'), request.form.get('email')))
+                flash("Great job – you're once step closer to a Sunday session!!")
                 del session['order_id']
                 return redirect(url_for('main.index'))
-                flash("Great job – you're once step closer to a Sunday session!!")
+
             except:
                 return 'There was an issue completing your order'
     else:
         print('There is nothing in the cart')  # console.log
     return render_template('checkout.html', form=form)
-
-
-# @bp.route('/checkout')
-# def checkout():
-#     form = CheckoutForm()
-#     return render_template('checkout.html', form=form)
-
-    # if 'order_id' in session:
-    #     order = Order.query.get_or_404(session['order_id'])
-    #     if form.validate_on_submit():
-    #         order.status = True
-    #         order.firstname = form.firstname.data
-    #         order.surname = form.surname.data
-    #         order.email = form.email.data
-    #         order.address = form.address.data
-    #         totalcost = 0
-    #         for wine in order.wines:
-    #             totalcost = totalcost + wine.price
-    #         order.totalcost = totalcost
-    #         order.date = datetime.now()
-    #         try:
-    #             db.session.commit()
-    #             del session['order_id']
-    #             flash('Quick flash message to determine if redirect is working')
-    #             print('redirecting to index.html')
-    #             return redirect(url_for('main.index'))
-    #         except:
-    #             return 'There was an issue completing your order'
-
-    print('First name: {}\nLast name: {}\nEmail: {}\nAddress: {}'
-          .format(request.form.get('firstname'), request.form.get('surname'), request.form.get('address'), request.form.get('email')))

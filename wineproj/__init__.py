@@ -33,11 +33,12 @@ def create_app():
 
     return app
 
-# ! Maybe these are causing the bootstrap naming conflicts
-# @app.errorhandler(404)
-# inbuilt function which takes error as parameter
-# def not_found(e):
-#     return render_template("404.html")
-# @app.errorhandler(500)
-# def internal_error(e):
-#     return render_template("500.html")
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("404.html")
+
+
+@app.errorhandler(500)
+def internal_error(e):
+    return render_template("500.html")

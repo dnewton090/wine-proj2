@@ -17,17 +17,17 @@
                             Wines
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/wines/1">Reds</a>
-                            <a class="dropdown-item" href="/wines/2">Whites</a>
-                            <a class="dropdown-item" href="/wines/3">Rosé & Sparkling</a>
-                            <a class="dropdown-item" href="/wines/4">Fortifieds</a>
+                            <a class="dropdown-item" href="/winecategory/1">Reds</a>
+                            <a class="dropdown-item" href="/winecategory/2">Whites</a>
+                            <a class="dropdown-item" href="/winecategory/3">Rosé & Sparkling</a>
+                            <a class="dropdown-item" href="/winecategory/4">Fortifieds</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="{{ url_for('main.login') }}" class="nav-item nav-link">Login / Register</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('main.cart') }}" class="nav-item nav-link">CART</a>
+                        <a href="{{ url_for('main.order') }}" class="nav-item nav-link">CART</a>
                     </li>
                 </ul>
             </div>

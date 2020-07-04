@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 <!-- {% include "includes/jumbotron.html" %} -->
-{% block title %}Your Wine Cart{% endblock %}
+{% block title %} SE Wines - Cart {% endblock %}
+{% block caption %}Your Wine Cart{% endblock %}
 
 {% block content %}
 <!-- display contents of user basket -->
@@ -54,15 +55,22 @@
 
         <!-- total price and page controls -->
         <section>
-            <div class="row co-12 d-flex">
-                <h5 class="mt-4">Quote = {{ "$%.2f"|format(totalprice) }}</h5>
+            <div class="row text-center">
+                <h1 class=" mt-4">Quote = {{ "$%.2f"|format(totalprice) }}</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-3 d-flex mb-1">
+                    <a href="{{ url_for('main.index') }}" class="btn btn-info btn-sm">Back to Browse</a><br>
+                </div>
+                <div class="col-md-3 d-flex mb-1">
+                    <a href="{{ url_for('main.checkout') }}" class="btn btn-info btn-sm">Checkout</a>
+                </div>
+                <div class="col-md-3 d-flex mb-1">
+                    <a href="{{ url_for('main.deleteall') }}" class="btn btn-info btn-sm">Delete Entire Basket</a>
+                </div>
             </div>
 
-            <div class="col-md-4 d-flex mb-1">
-                <a href="{{ url_for('main.index') }}" class="btn btn-info">Back to Browse</a>
-                <a href="{{ url_for('main.checkout') }}" class="btn btn-info">Checkout</a>
-                <a href="{{ url_for('main.deleteall') }}" class="btn btn-info">Delete Entire Basket</a>
-            </div>
+
         </section>
     </div>
 </section>

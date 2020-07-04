@@ -1,20 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'base_nojumbo.html' %}
 {% import "bootstrap/wtf.html" as wtf %}
+{% block title %} SE Wines - Checkout {% endblock %}
 {% block content %}
 <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>Checkout</h1>
-                <p>
-                    Testing
-                </p>
-            </div>
-        </div>
+    <div class="container wines">
         <div class="row">
             <div class="col-6">
+                <br>
+                <h1>Checkout!</h1>
                 {{wtf.quick_form(form)}}
             </div>
+            <!-- <div class="col-6">
+                <br>
+                <h2>Thankyou for your order!</h2>
+                <p>Please sumbit your details to confirm. </p>
+            </div> -->
         </div>
     </div>
 </section>

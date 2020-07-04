@@ -1,10 +1,11 @@
 {% extends "base_nojumbo.html" %}
-{% block title %}Select your drop...{% endblock%}
+{% block title %} SE Wines - Categories {% endblock %}
+{% block caption %}Select your drop...{% endblock%}
 {% block content %}
 <!-- Display wines -->
 <section>
     <div class="container-fluid wines">
-        <h2 class="display-4 text-center py-1 my-1">Select your drop...</h2>
+        <h2 class="display-4 text-center py-1 my-1 mb-3">Select your drop...</h2>
 
         <div class="row">
             <!-- each wine is a bootstrap card -->
@@ -26,14 +27,12 @@
                         <p id="store-item-description"> {{ wine.description }} </p>
                     </div>
                     <!-- <div class="card-footer"> -->
-                    <div>
-                        <!-- Form action relates to POST request, WTForms -->
-                        <!-- Forms don't need anchor tags -->
-                        <form action="{{url_for('main.order') }}">
-                            <input type="hidden" id="wine_id" name="wine_id" value="{{wine.id}}">
-                            <input class="btn btn-info" type="submit" role="button" value="Add to Cart">
-                        </form>
-                    </div>
+                    <!-- Form action relates to POST request, WTForms -->
+                    <!-- Forms don't need anchor tags -->
+                    <form class="card-footer" action="{{url_for('main.order') }}">
+                        <input type="hidden" id="wine_id" name="wine_id" value="{{wine.id}}">
+                        <input class="btn btn-info" type="submit" role="button" value="Add to Cart">
+                    </form>
                 </div>
             </div>
             {% endfor %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
-{% block title %} Drops from South Australia {% endblock %}
+{% block title%}SE Wines - Home{% endblock %}
+{% block caption %} Drops from South Australia {% endblock %}
 
 {% block content %}
 
@@ -8,6 +8,8 @@
 
 <section>
     <div class="container-fluid">
+        <h2 class="display-4 text-center py-1 my-1 mb-4">Select your drop</h2>
+
         <!-- horizontal row for the categories -->
         <div class="row">
 
@@ -22,7 +24,7 @@
                         <h3 class="card-title">{{category.name}}</h3>
                         <p class="text-muted visible-tablet">{{category.description}}</p>
                     </div>
-                    <div class="card-filter">
+                    <div class="card-footer">
                         <a class="btn btn-info" href="{{ url_for('main.wines', categoryid = category.id) }}"
                             role="button">Select your drop!</a>
                     </div>
@@ -47,7 +49,7 @@
             {% for wine in wines %}
             <div class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
                 <div class="card">
-                    <a href="#">
+                    <a href="{{ url_for('main.wines2', id = wine.id) }}">
                         <img src="{{ url_for('static', filename='img/'+wine.image)}}" class="card-img-bottom" alt="">
                         <span class="store-item-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -63,10 +65,11 @@
                         </div>
                         <p id="store-item-name"><i> {{ wine.blend }} </i></p>
                         <!-- ! input type=hidden to ensure message is sent via POST -->
-                        <form action="{{url_for('main.order') }}">
+                        <form class="card-footer" action="{{url_for('main.order') }}">
                             <input type="hidden" id="wine_id" name="wine_id" value="{{wine.id}}">
                             <input class="btn btn-info" type="submit" role="button" value="Add to Cart">
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -75,6 +78,29 @@
             <!-- end of card-->
         </div>
 </section>
+
+<div class="">
+    <hr><br>
+    <h2 class="display-4 text-center py-4 my-4">A brief history of the region...</h2>
+
+    <p class="lead">Coonawarra’s agricultural history began in the mid-1800s when settlers recognised the potential
+        of the flat, fertile plains for sheep farming and fruit growing. Enterprising Scottish settler John Riddoch
+        planted Coonawarra’s first grapevines in 1891, thirty years after establishing a lucrative sheep farm at
+        Penola. Thanks to the work of pioneering work of people like David Wynn and Bill Redman today Coonawarra is,
+        perhaps alongside Margaret River, Australia’s most famous cool-climate region for Cabernet Sauvignon.
+
+        The grape varietal has found a home in the terra rossa soils of Coonawarra, producing rich, firmly
+        structured red wines that are renowned around the world. But the region is by no means a one trick pony,
+        producing a diverse range of varieties and styles. And the established winemaking families have been
+        reinforced by a new generation of winemakers in recent years, continuing the tradition of elegant cool
+        climate winemaking and bringing the region to a new audience.</p><br><a
+        href="https://www.wineaustralia.com/discover-australian-wine/south-australia-wines/coonawarra"
+        alt="Coonawarra - WineAustralia">Reference: WineAustralia</a>
+</div>
+
+{% endblock %}
+
+<!-- 
 
 <section>
     <h2 class="display-4 text-center py-4 my-4">Meet our brands</h2>
@@ -122,12 +148,7 @@
     </div>
 </section>
 
-{% endblock %}
-
-
-
-
-
+ -->
 
 
 
@@ -157,24 +178,3 @@
             * Delete all items</label>
         </div>
     </form> -->
-
-
-
-
-<div class="jumbotron text-center">
-    <h2 class="display-4 text-center py-4 my-4">A brief history of the region...</h2>
-
-    <p class="lead">Coonawarra’s agricultural history began in the mid-1800s when settlers recognised the potential
-        of the flat, fertile plains for sheep farming and fruit growing. Enterprising Scottish settler John Riddoch
-        planted Coonawarra’s first grapevines in 1891, thirty years after establishing a lucrative sheep farm at
-        Penola. Thanks to the work of pioneering work of people like David Wynn and Bill Redman today Coonawarra is,
-        perhaps alongside Margaret River, Australia’s most famous cool-climate region for Cabernet Sauvignon.
-
-        The grape varietal has found a home in the terra rossa soils of Coonawarra, producing rich, firmly
-        structured red wines that are renowned around the world. But the region is by no means a one trick pony,
-        producing a diverse range of varieties and styles. And the established winemaking families have been
-        reinforced by a new generation of winemakers in recent years, continuing the tradition of elegant cool
-        climate winemaking and bringing the region to a new audience.</p>
-    <a href="https://www.wineaustralia.com/discover-australian-wine/south-australia-wines/coonawarra"
-        alt="Coonawarra - WineAustralia">Reference: WineAustralia</a>
-</div>
